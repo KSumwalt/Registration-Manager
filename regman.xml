@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs title="WSO2 Carbon and Stratos SVN Data from MarkMail" />
+    <Content type="html">
+          <![CDATA[
+
+            <style>
+              h1 {
+              background-color: #336600;
+              color: #EDEDED;
+              border: 7px solid #336600;
+              font-family: 'arial black';
+              font-size: 30px;
+              text-align: center;
+              border-radius: 12px;
+              box-shadow: 6px 6px 10px #214200;
+              }
+
+              nav {
+              background-color: #336600;
+              color: #FFFFFF;
+              border: 7px solid #336600;
+              font-family: 'arial black';
+              font-size: 16px;
+              border-radius: 10px;
+              box-shadow: 6px 6px 10px #214200;
+            }
+
+            #optionListForms {
+              border: 4px solid #006666;
+              border-radius: 8px;
+              color: #FFFFFF;
+              background-color: #336600;
+              padding: 5px;
+            }
+
+              </style>
+              <head>
+                <base target="_top">
+              </head>
+              <body>
+                    <header>
+                    <h1>BOXWOOD Canada</h1>
+                </header>
+                <nav>
+                Modules: 
+                      <select id="optionListForms" onchange="setForm()">
+                        <option selected disabled>Select an item to view.</option>
+                        <option value="grid">Review Registrations</option>
+                        <option value="regman">Single Registration Manager</option>
+                        <option value="assbill">Assign Billets</option>
+                        <option value="wstud">Assign Work Study</option>
+                        <option value="billet">Review Billet Locations</option>
+                        <option value="singlebillet">Single Billet Manager</option>
+                      </select>
+
+                </nav>
+                <br />
+                <article id="articleSection">
+                    <h3>Select a Module to use above...</h3>
+                </article>
+              </body>
+            </html>
+
+            <script>
+            $('iframe').load(function(){
+              $(this).height($(this).contents().outerHeight()+50);
+              $(this).width($(this).contents().outerWidth()+50);
+            });
+
+
+            window.onFailure = function(err) {
+              
+              //alert('There was an error! ' + err.message);
+              
+              //var showString = 
+              document.getElementById("articleSection").innerHTML = "<br><DL><DT>There was an error!</DT> <DD>" + err.message + "</DD></DL><br><br>";
+              document.getElementById("articleSection").style.background = "#F2BB66";
+            };
+
+
+            function setForm() {
+            //    alert('In setForm');
+            
+              //Find the selected Form Name
+              var n = document.getElementById("optionListForms").selectedIndex;
+              var articleForm = document.getElementById("optionListForms").getElementsByTagName("option")[n].value;
+            
+            //  var articleForm = "RegistrationManager";
+            //    alert(articleForm);
+              switch (articleForm){
+              case "billet":
+                var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=grid" width="1200" height="600"></iframe>';
+                break;
+                
+              case "singlebillet":
+                var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=single&type=Ex" width="1200" height="600"></iframe>';
+                break;
+            
+              default:
+                var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm +'" width="1200" height="600"></iframe>';
+            //    var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm;
+              }
+            
+                document.getElementById("articleSection").innerHTML = replacementInner;
+            //    document.getElementById('ourForm').src = replacement;
+            
+            }
+            
+            </script>
+          ]]>
+    </Content>
+</Module>
