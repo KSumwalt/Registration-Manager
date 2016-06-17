@@ -35,11 +35,10 @@
             }
 
               </style>
-              <head>
+
                 <base target="_top">
-              </head>
-              <body>
-                    <header>
+
+                <header>
                     <h1>BOXWOOD Canada</h1>
                 </header>
                 <nav>
@@ -59,7 +58,7 @@
                 <article id="articleSection">
                     <h3>Select a Module to use above...</h3>
                 </article>
-              </body>
+
 
             <script>
 
