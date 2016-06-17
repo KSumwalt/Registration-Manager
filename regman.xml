@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-    <ModulePrefs title="Registration Manager" />
+    <ModulePrefs title="Registration Manager" >
         <Require feature="dynamic-height"/>
     </ModulePrefs>
     <Content type="html">
