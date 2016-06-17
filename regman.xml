@@ -43,7 +43,7 @@
                     <h1>BOXWOOD Canada</h1>
                 </header>
                 <nav>
-                Modules: 
+                Module: 
                       <select id="optionListForms" onchange="setForm()">
                         <option selected disabled>Select an item to view.</option>
                         <option value="grid">Review Registrations</option>
@@ -60,14 +60,8 @@
                     <h3>Select a Module to use above...</h3>
                 </article>
               </body>
-            </html>
 
-            <script type="text/javascript">
-            $('iframe').load(function(){
-              $(this).height($(this).contents().outerHeight()+50);
-              $(this).width($(this).contents().outerWidth()+50);
-            });
-
+            <script>
 
             window.onFailure = function(err) {
               
