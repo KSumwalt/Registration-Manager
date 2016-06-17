@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
     <ModulePrefs title="Registration Manager" />
+        <Require feature="dynamic-height"/>
+    </ModulePrefs>
+    <UserPref name="scroll" display_name="Display scrollbar" default_value="auto" datatype="enum">
+        <EnumValue value="auto" display_value="Automatic"/>
+        <EnumValue value="no" display_value="No"/>
+        <EnumValue value="yes" display_value="Yes"/>
+    </UserPref>
     <Content type="html">
           <![CDATA[
 
@@ -91,11 +98,42 @@
                 break;
             
               default:
-                var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm +'" width="1200" height="600"></iframe>';
-            //    var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm;
+            //    var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm +'" width="1200" height="600"></iframe>';
+                var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm;
               }
             
-                document.getElementById("articleSection").innerHTML = replacementInner;
+            
+            
+            
+            
+            
+            
+            
+    var iframe = document.createElement('iframe');
+//    iframe.setAttribute('width', width + 'px');
+//    iframe.setAttribute('height', height + 'px');
+    iframe.setAttribute('frameborder','no');
+    if(scroll){
+      iframe.setAttribute('scrolling', scroll);
+    }
+    iframe.setAttribute('src', replacement);
+
+    // set the slideshow to the placeholder div
+    var dest = document.getElementById('articleSection');
+    dest.innerHTML = '';
+    dest.appendChild(iframe);
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+           //     document.getElementById("articleSection").innerHTML = replacementInner;
             //    document.getElementById('ourForm').src = replacement;
             
             }
