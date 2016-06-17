@@ -62,7 +62,7 @@
               </body>
             </html>
 
-            <script>
+            <script type="text/javascript">
             $('iframe').load(function(){
               $(this).height($(this).contents().outerHeight()+50);
               $(this).width($(this).contents().outerWidth()+50);
