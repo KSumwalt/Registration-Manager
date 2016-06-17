@@ -3,11 +3,6 @@
     <ModulePrefs title="Registration Manager" />
         <Require feature="dynamic-height"/>
     </ModulePrefs>
-    <UserPref name="scroll" display_name="Display scrollbar" default_value="auto" datatype="enum">
-        <EnumValue value="auto" display_value="Automatic"/>
-        <EnumValue value="no" display_value="No"/>
-        <EnumValue value="yes" display_value="Yes"/>
-    </UserPref>
     <Content type="html">
           <![CDATA[
 
@@ -43,8 +38,6 @@
 
               </style>
 
-                <base target="_top">
-
                 <header>
                     <h1>BOXWOOD Canada</h1>
                 </header>
@@ -67,73 +60,38 @@
                 </article>
 
 
-            <script>
+            <script type="text/javascript">
 
             window.onFailure = function(err) {
               
-              //alert('There was an error! ' + err.message);
-              
-              //var showString = 
               document.getElementById("articleSection").innerHTML = "<br><DL><DT>There was an error!</DT> <DD>" + err.message + "</DD></DL><br><br>";
               document.getElementById("articleSection").style.background = "#F2BB66";
             };
 
 
             function setForm() {
-            //    alert('In setForm');
-            
+
               //Find the selected Form Name
               var n = document.getElementById("optionListForms").selectedIndex;
               var articleForm = document.getElementById("optionListForms").getElementsByTagName("option")[n].value;
             
-            //  var articleForm = "RegistrationManager";
-            //    alert(articleForm);
               switch (articleForm){
               case "billet":
                 var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=grid" width="1200" height="600"></iframe>';
+                var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=grid';
                 break;
                 
               case "singlebillet":
                 var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=single&type=Ex" width="1200" height="600"></iframe>';
+                var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=single&type=Ex';
                 break;
             
               default:
-            //    var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm +'" width="1200" height="600"></iframe>';
-                var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm;
+                var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm +'" width="1200" height="600"></iframe>';
+               var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm;
               }
             
-            
-            
-            
-            
-            
-            
-            
-    var iframe = document.createElement('iframe');
-//    iframe.setAttribute('width', width + 'px');
-//    iframe.setAttribute('height', height + 'px');
-    iframe.setAttribute('frameborder','no');
-    if(scroll){
-      iframe.setAttribute('scrolling', scroll);
-    }
-    iframe.setAttribute('src', replacement);
-
-    // set the slideshow to the placeholder div
-    var dest = document.getElementById('articleSection');
-    dest.innerHTML = '';
-    dest.appendChild(iframe);
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-           //     document.getElementById("articleSection").innerHTML = replacementInner;
+                document.getElementById("articleSection").innerHTML = replacementInner;
             //    document.getElementById('ourForm').src = replacement;
             
             }
