@@ -60,6 +60,43 @@
                     <iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=grid" width="1200" height="600"></iframe>
                 </article>
 
+            <script type="text/javascript">
+
+            window.onFailure = function(err) {
+              
+              document.getElementById("articleSection").innerHTML = "<br><DL><DT>There was an error!</DT> <DD>" + err.message + "</DD></DL><br><br>";
+              document.getElementById("articleSection").style.background = "#F2BB66";
+            };
+
+            function setForm() {
+
+              //Find the selected Form Name
+              var n = document.getElementById("optionListForms").selectedIndex;
+              var articleForm = document.getElementById("optionListForms").getElementsByTagName("option")[n].value;
+            
+              switch (articleForm){
+              case "billet":
+                var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=grid" width="1200" height="600"></iframe>';
+                var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=grid';
+                break;
+                
+              case "singlebillet":
+                var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=single&type=Ex" width="1200" height="600"></iframe>';
+                var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=single&type=Ex';
+                break;
+            
+              default:
+                var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm +'" width="1200" height="600"></iframe>';
+               var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm;
+              }
+            
+                document.getElementById("articleSection").innerHTML = replacementInner;
+            //    document.getElementById('ourForm').src = replacement;
+            
+            }
+
+            
+            </script>
 
           ]]>
     </Content>
