@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-    <ModulePrefs title="WSO2 Carbon and Stratos SVN Data from MarkMail" />
+    <ModulePrefs title="Registration Manager" />
     <Content type="html">
           <![CDATA[
 
@@ -42,7 +42,7 @@
                     <h1>BOXWOOD Canada</h1>
                 </header>
                 <nav>
-                Module: 
+                Modules: 
                       <select id="optionListForms" onchange="setForm()">
                         <option selected disabled>Select an item to view.</option>
                         <option value="grid">Review Registrations</option>
