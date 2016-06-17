@@ -74,17 +74,17 @@
             
               switch (articleForm){
               case "billet":
-                var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=grid" width="1200" height="600"></iframe>';
+                var replacementInner = '<iframe frameborder="0" src="https://sites.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=grid" width="1200" height="600"></iframe>';
                 var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=grid';
                 break;
                 
               case "singlebillet":
-                var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=single&type=Ex" width="1200" height="600"></iframe>';
+                var replacementInner = '<iframe frameborder="0" src="https://sites.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=single&type=Ex" width="1200" height="600"></iframe>';
                 var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbwoN_6rNOKJgXN_UD2RtvVxtAN2x7Dy037RSU7T7p7cxBPDKWW3/exec?form=single&type=Ex';
                 break;
             
               default:
-                var replacementInner = '<iframe frameborder="0" src="https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm +'" width="1200" height="600"></iframe>';
+                var replacementInner = '<iframe frameborder="0" src="https://sites.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm +'" width="1200" height="600"></iframe>';
                var replacement = 'https://script.google.com/a/macros/boxwood.org/s/AKfycbx1-m_QA-0xGepFaaWiLVdDoPIjXrjmpXa6ArBQlMp2eop5_rt-/exec?form=' + articleForm;
               }
             
